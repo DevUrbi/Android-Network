@@ -16,6 +16,6 @@ public class GetURLContent extends AppCompatActivity {
         setContentView( webView );
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled( true );
-        webView.loadUrl("https://kutxabank.es");
+        webView.loadUrl("https://ninjaclimber.urbieta.eus");
     }
 }
