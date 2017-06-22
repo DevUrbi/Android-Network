@@ -18,6 +18,11 @@ public class ReadSMSExample extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_smsexample);
 
+
+        loadContentSMS();
+    }
+
+    private void loadContentSMS(){
         ListView smsList = (ListView) findViewById(R.id.sms_list);
 
         Cursor cursor = getContentResolver().query(Uri.parse("content://sms/"), null, null, null, null );
@@ -34,4 +39,6 @@ public class ReadSMSExample extends AppCompatActivity {
                         cursor, columns, new int[]{android.R.id.text1, android.R.id.text2}, 0);
         smsList.setAdapter(simpleCursorAdapter);
     }
+
+
 }

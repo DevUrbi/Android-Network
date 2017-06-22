@@ -4,7 +4,8 @@
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,17 +16,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DialingExample" />
-        <activity android:name=".SMSExample">
-
-        </activity>
-        <activity android:name=".GetURLContent">
-        </activity>
+        <activity android:name=".SMSExample"></activity>
+        <activity android:name=".GetURLContent"></activity>
         <activity android:name=".ReadSMSExample">
+        </activity>
+        <activity android:name=".ReceiveSMSListenerExample">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".SMSBroadCastReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
     </application>
+
 </manifest>
